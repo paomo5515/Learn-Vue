@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VUE</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- 不会被 HTML 渲染， -->
+  <template id="pm">
+    <div>
+      <h2>{{message}}</h2>
+      <h2>{{counter}}</h2>
+      <button @click='increment'>+1</button>
+      <button @click='decrement'>-1</button>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+
+    Vue.createApp({
+      // 如果字符串是以 #开始，那么它将被用作 querySelector，
+      // 并且使用匹配元素的 innerHTML 作为模板字符串
+      template: `#pm`,
+      data: function () {
+        return {
+          message: "Hello Vue",
+          counter: 0
+        }
+      },
+      // 定义各种各样的方法
+      methods: {
+        increment() {
+          // console.log("点击了increment")
+          this.counter++
+        },
+        decrement() {
+          // console.log("点击了decrement")
+          this.counter--
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+
+</html>
