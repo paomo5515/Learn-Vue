@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div :style="{color: 'red'}">哈哈哈</div>
+    <div :style="{color: finalColor, 'font-size': '30px'}">哈哈哈</div>
+    <div :style="{color: finalColor, fontSize: '30px'}">哈哈哈</div>
+    <div :style="{color: finalColor, fontSize: finalFontSize + 'px'}">哈哈哈</div>
+    <!-- 绑定 data 中的属性值并且是一个对象 -->
+    <div :style="finalStyleObj">呵呵哈哈哈</div>
+    <!-- 调用一个方法 -->
+    <div :style="getFinalStyleObj()">呵呵哈哈哈</div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          finalColor: "blue",
+          finalFontSize: 50,
+          finalStyleObj: {
+            fontSize: "50px",
+            fontWeight: 700,
+            backgroundColor: "#bfa"
+          }
+        }
+      },
+      methods: {
+        getFinalStyleObj() {
+          return {
+            fontSize: "50px",
+            fontWeight: 700,
+            backgroundColor: "#bfa"
+          }
+        },
+
+      }
+    }
+    Vue.createApp(App).mount("#app")
+  </script>
+</body>
+
+</html>
