@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>电影列表</h2>
+    <ul>
+      <!-- 遍历数组 -->
+      <li v-for="(movie, index) in movies">{{movie}}-{{index+1}}</li>
+    </ul>
+    <hr>
+    <h2>个人信息</h2>
+    <ul>
+      <!-- 只写一个 默认就是 value -->
+      <!-- 遍历对象 -->
+      <li v-for="(value, key, index) in info">{{index}}-{{key}}-{{value}}</li>
+    </ul>
+    <hr>
+    <h2>遍历数字</h2>
+    <ul>
+      <li v-for="(num, index) in 10">{{num}}-{{index}}</li>
+    </ul>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          movies: [
+            "盗墓笔记",
+            "大话西游",
+            "西游记",
+            "水浒传"
+          ],
+          info: {
+            name: "hello",
+            height: 1.84,
+            adress: "上海市"
+          }
+        }
+      }
+    }
+    Vue.createApp(App).mount("#app")
+  </script>
+</body>
+
+</html>
