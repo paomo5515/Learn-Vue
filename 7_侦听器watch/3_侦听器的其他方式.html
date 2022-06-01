@@ -43,7 +43,16 @@
         changeInfoAdress() {
           this.info.adress[2] = "杭州市"
         }
+      },
+      created() {
+        this.$watch("info", (newInfo, oldInfo) => {
+          console.log(newInfo, oldInfo)
+        }, {
+          deep: true,
+          immediate: true
+        })
       }
+
     }
     Vue.createApp(App).mount("#app")
   </script>

@@ -1,0 +1,22 @@
+table {
+  border: 1px lightcoral solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 8px 16px;
+  border: 1px lightcoral solid;
+  text-align: left;
+}
+
+th {
+  background-color: lightseagreen;
+  color: black;
+  font-weight: 600;
+}
+
+.span {
+  padding: 0 6px;
+}
