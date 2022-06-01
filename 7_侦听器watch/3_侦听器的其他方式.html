@@ -28,27 +28,16 @@
         }
       },
       watch: {
-        // 默认情况下，我们的侦听器只会针对监听的数据本身的改变（内部发生的改变是不能被侦听的）
-        // info(newInfo, oldInfo) {
-        //   console.log("newInfo：", newInfo, "newInfo:", newInfo)
-        // },
-
-        // 深度侦听/立即执行（一定会执行一次）
-        info: {
-          handler(newInfo, oldInfo) {
-            console.log("newInfo：", newInfo, "oldInfo：", oldInfo)
-          },
-          deep: true, // 深度侦听
-          immediate: true // 立即执行
+        // 只 侦听 info.name
+        "info.name"(newName, oldName) {
+          console.log(newName, oldName)
         }
       },
       methods: {
         changeInfo() {
-          // 会被侦听
           this.info = { name: "word" }
         },
         changeInfoName() {
-          // 默认不会被侦听
           this.info.name = "kkkk"
         },
         changeInfoAdress() {
