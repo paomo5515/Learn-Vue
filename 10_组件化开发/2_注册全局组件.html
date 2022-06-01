@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>我是标题</h2>
+    <p>我是内容：哈哈哈哈</p>
+
+    <component-a></component-a>
+    <component-c></component-c>
+    <!-- <ComponentC></ComponentC> -->
+  </template>
+
+  <template id="component-a">
+    <h2>{{title}}</h2>
+    <h2>{{desc}}</h2>
+    <button @click="btnClick">点击按钮</button>
+  </template>
+
+  <template id="ComponentC">
+    <h2>{{title}}</h2>
+    <h3>{{message}}</h3>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+    }
+    const app = Vue.createApp(App)
+    // 使用 app 注册一个全局组件
+    // 全局组件：意味着注册的这个组件可以在任何的组件模板中使用
+    app.component("component-a", {
+      template: "#component-a",
+      data() {
+        return {
+          title: "我是标题",
+          desc: "我是内容：大大大大"
+        }
+      },
+      methods: {
+        btnClick() {
+          console.log("按钮发生了点击")
+        }
+      }
+    })
+
+    // 驼峰命名
+    app.component("ComponentC", {
+      template: "#ComponentC",
+      data() {
+        return {
+          title: "驼峰命名组件",
+          message: "我是CpmponentC组件"
+        }
+      }
+    })
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

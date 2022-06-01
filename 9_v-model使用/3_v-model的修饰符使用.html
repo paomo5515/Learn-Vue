@@ -12,8 +12,17 @@
   <div id="app"></div>
 
   <template id="my-app">
-    <input type="text" v-model.lazy="message">
+    <!-- 1.lazy 修饰符，等到按回车或者提交时才触发 -->
+    <!-- <input type="text" v-model.lazy="message"> -->
+
+    <!-- 2.number 修饰符 -->
+    <!-- <input type="text" v-model.number="message">
     <h2>{{message}}</h2>
+    <button @click="showType">查看类型</button> -->
+
+    <!-- 3.trim 修饰符 -->
+    <input type="text" v-model.trim="message">
+    <button @click="showResult">查看结果</button>
   </template>
 
   <script src="../js/vue.js"></script>
@@ -22,7 +31,15 @@
       template: "#my-app",
       data() {
         return {
-          message: "Hello Word"
+          message: "hello word"
+        }
+      },
+      methods: {
+        showType(){
+          console.log(this.message ,typeof this.message)
+        },
+        showResult(){
+          console.log(this.message)
         }
       }
     }
