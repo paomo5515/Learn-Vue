@@ -24,13 +24,28 @@
       template: "#my-app",
       data() {
         return {
-          info: { name: "hello", age: 18, adress: ["北京市", "上海市"] }
+          info: { name: "hello", age: 18, adress: ["北京市", "上海市"] },
+          friends: [{ name: "tom" }, { name: "jerry" }]
         }
       },
       watch: {
+        info(newValue, oldValue) {
+          console.log(newValue, oldValue)
+        },
         // 只 侦听 info.name
         "info.name"(newName, oldName) {
           console.log(newName, oldName)
+        },
+        // 这种写法没用
+        "friends[0].name"(newName, oldName) {
+          console.log(newName, oldName)
+        },
+        // 如果要监听 数组
+        friends: {
+          handler(newName, oldName) {
+            console.log(newName, oldName)
+          },
+          deep: true
         }
       },
       methods: {
