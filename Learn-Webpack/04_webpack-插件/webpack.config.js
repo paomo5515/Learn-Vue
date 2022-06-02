@@ -3,6 +3,9 @@ const path = require("path")
 // npm i clean-webpack-plugin -D
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
+// npm i html-webpack-plugin -D
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+
 module.exports = {
   entry: "./src/main.js",
   output: {
@@ -57,6 +60,7 @@ module.exports = {
   },
   plugins: [
     // 一个个的插件对象
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin()
   ]
 }
