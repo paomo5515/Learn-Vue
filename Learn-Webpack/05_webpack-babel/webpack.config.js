@@ -10,6 +10,7 @@ const { DefinePlugin } = require("webpack")
 
 // npm i copy-webpack-plugin -D
 const CopyWebpackPlugin = require("copy-webpack-plugin")
+const { options } = require("less")
 
 module.exports = {
   // 设置模式
@@ -66,6 +67,25 @@ module.exports = {
         generator: {
           filename: "font/[name]_[hash:6][ext]"
         }
+      },
+      // {
+      //   test: /\.js$/,
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       /* plugins: [
+      //         "@babel/plugin-transform-arrow-functions",
+      //         "@babel/plugin-transform-block-scoping"
+      //       ] */
+      //       presets: [
+      //         "@babel/preset-env"
+      //       ]
+      //     }
+      //   }
+      // }
+      {
+        test: /\.js$/,
+        loader: "babel-loader"
       }
     ]
   },

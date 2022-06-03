@@ -23,6 +23,18 @@
 
  ### babel 的预设 preset
     如果我们需要转换的内容过多，一个个设置是比较麻烦的，我们可以使用预设（preset）；
-    安装预设 npm i @babel/preset-env -D
-    // 使用预设
-    npx babel demo.js --out-file test.js --presets=@babel/preset-env
+     安装预设 npm i @babel/preset-env -D
+     // 使用预设
+     npx babel demo.js --out-file test.js --presets=@babel/preset-env
+  
+  ### babel 是如何做到将我们的 一段代码（ES6、TypeScript、React）转成另外一段代码（ES5）的呢？
+    从一种 源代码（原生语言）转换成另一种源代码（目标语言），这是什么的工作呢？
+      就是 编译器，事实上我们可以将 bable 看成就是一个的编译器。
+      babel 编译器的作用就是将我们的源代码，转换成浏览器可以直接识别的 另外一段源代码。
+    babel 也拥有编译器的工作流程：
+      解析阶段（Parsing）
+      转换阶段（Transformation）      
+      生成阶段（Code Generation）
+    
+    https://github.com/jamiebuilds/the-super-tiny-compiler
+
