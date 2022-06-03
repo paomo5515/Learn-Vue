@@ -102,7 +102,9 @@ module.exports = {
       title: "Learn Vue"
     }),
     new DefinePlugin({
-      BASE_URL: "'./'"
+      BASE_URL: "'./'",
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false
     }),
     new CopyWebpackPlugin({
       patterns: [
