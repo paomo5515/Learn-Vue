@@ -38,3 +38,6 @@
     
     https://github.com/jamiebuilds/the-super-tiny-compiler
 
+  ### 处理 vue 文件
+    npm install -D vue-loader vue-template-compiler
+
