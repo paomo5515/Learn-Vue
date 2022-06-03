@@ -1,4 +1,4 @@
-import { createApp } from 'vue/dist/vue.esm-bundler';
+import { createApp } from 'vue';
 import { sum } from "./js/math";
 const { priceFormat } = require("./js/format")
 import App from "./vue/App.vue"
