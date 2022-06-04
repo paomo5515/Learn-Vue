@@ -41,3 +41,14 @@
   ### 处理 vue 文件
     npm install -D vue-loader vue-template-compiler
 
+  ### 热更新
+    第一种方式：watch
+      在 package.json 文件中 scripts添加 --watch，webpack-cli 就会去配置 watch: true;
+      也可以在 webpack.config.js 中添加 watch: true;
+    第二种方式：webpack-dev-server
+      npm i webpack-dev-server -D
+      在 package.json 文件中 scripts添加 "serve": "webpack serve"，webpack-cli 发现这个参数 就回去 启动 webpack-dev-server
+      这种方式没有输出打包后的静态资源，它是将打包后的资源放到了内存中，通过 express 来访问 内存中的静态资源，然后再返回到浏览器中
+      事实上 webpack-dev-server 使用了一个库叫 memfs（memory-fs webpack自己写的）
+
+
