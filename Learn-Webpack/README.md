@@ -51,4 +51,8 @@
       这种方式没有输出打包后的静态资源，它是将打包后的资源放到了内存中，通过 express 来访问 内存中的静态资源，然后再返回到浏览器中
       事实上 webpack-dev-server 使用了一个库叫 memfs（memory-fs webpack自己写的）
 
-
+  ### webpack-分离
+    npm i webpack-merge -D
+    const { merge } = require("webpack-merge")
+    const CommonConfig = require("./webpack-comm.config")
+    module.exports = merge(CommonConfig, { webpack配置 })
