@@ -1,5 +1,5 @@
 {
-  "name": "07_webpack-watch",
+  "name": "07_webpack-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -38,6 +38,7 @@
     "webpack-dev-server": "^4.9.1"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "vue": "^3.2.36"
   }
 }

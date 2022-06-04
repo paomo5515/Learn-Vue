@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      title: "Hello Word",
+      title: "Hello Word hahah",
     };
   },
 };

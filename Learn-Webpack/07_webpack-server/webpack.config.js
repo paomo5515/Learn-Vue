@@ -13,6 +13,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 const { VueLoaderPlugin } = require("vue-loader")
 
 module.exports = {
+  target: "web",
   mode: "development",
   devtool: "source-map",
   //  监听文件变化
@@ -23,15 +24,44 @@ module.exports = {
     filename: "js/bundle.js",
   },
   devServer: {
+    hot: true,
+    // host: "0.0.0.0",
+    port: "6060",
+    // 是否要打开浏览器
+    open: true,
+    // // 是否开启 gzip 压缩
+    // compress: true,
+
+    // 设置代理
+    /* proxy: {
+      "/home": {
+        target: "http://123.207.32.32:8000",
+        pathRewrite: {
+          '^/home': ''
+        },
+        secure: false,
+        changeOrigin: true,
+      } 
+    }, */
+
     // 获取静态文件夹
     static: [
       {
         directory: path.join(__dirname, 'public')
       },
-      {
-        directory: path.join(__dirname, 'abc')
-      }
+      // {
+      //   directory: path.join(__dirname, 'abc')
+      // }
     ],
+  },
+  resolve: {
+    // modules: ["node_modules"],
+    extensions: [".js", ".json", "mjs", ".vue", ".ts", ".jsx", ".tsx"],
+    // 配文件夹别名
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "js": path.resolve(__dirname, "./src/js")
+    }
   },
   module: {
     rules: [
