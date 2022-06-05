@@ -7,5 +7,5 @@ module.exports = defineConfig({
     open: true,
     // https: false,
     // proxy: 'http://localhost:4000'
-  }
+  },
 })
