@@ -56,3 +56,10 @@
     const { merge } = require("webpack-merge")
     const CommonConfig = require("./webpack-comm.config")
     module.exports = merge(CommonConfig, { webpack配置 })
+
+  ### Vite 的构造
+    它主要由两部分组成：
+      一个开发服务器，它基于原生ES 模块提供了丰富的内建功能，HMR的速度非常快速；
+      一套构建指令，它使用 rollup 打开我们的代码，并且它是预配置的，可以输出生产环境的 优化过的静态资源；
+
+      
