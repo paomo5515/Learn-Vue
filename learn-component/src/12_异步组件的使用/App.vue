@@ -2,7 +2,16 @@
   <div>
     App组件
     <home></home>
-    <async-category></async-category>
+
+    <suspense>
+      <template #default>
+        <async-category></async-category>
+      </template>
+      <!-- 应急组件 -->
+      <template #fallback>
+        <loading></loading>
+      </template>
+    </suspense>
   </div>
 </template>
 
