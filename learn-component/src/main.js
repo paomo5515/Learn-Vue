@@ -8,7 +8,8 @@ import { createApp } from 'vue'
 // import App from "./07_事件总线的使用/App.vue"
 // import App from "./08_插槽的基本使用/App.vue"
 // import App from "./09_具名插槽的使用/App.vue"
-import App from "./10_作用域插槽的使用/App.vue"
+// import App from "./10_作用域插槽的使用/App.vue"
+import App from "./11_动态组件的使用/App.vue"
 
 
 const app = createApp(App)
