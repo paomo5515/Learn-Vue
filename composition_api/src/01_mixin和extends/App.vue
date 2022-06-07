@@ -1,28 +1,20 @@
 <template>
   <div>
-    <h2>{{ message }}</h2>
-    <button @click="foo">按钮</button>
+    <home></home>
   </div>
 </template>
 
 <script>
-import { demoMixin } from "./mixins/demoMixin";
+import Home from "./pages/Home.vue";
 export default {
-  mixins: [demoMixin],
+  components: {
+    Home,
+  },
   data() {
     return {
-      title: "hello vue",
       message: "hello vue",
     };
   },
-  methods: {
-    foo(){
-      console.log("app foo");
-    }
-  },
-  created() {
-    console.log("App created");
-  }
 };
 </script>
 
