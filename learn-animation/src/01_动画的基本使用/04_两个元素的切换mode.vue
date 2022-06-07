@@ -2,21 +2,15 @@
   <div class="test">
     <button @click="isShow = !isShow">显示/隐藏</button>
 
-    <!-- appear 默认是 false -->
-    <transition name="pm" mode="out-in" appear>
-      <component :is="isShow ? 'Home' : 'About'"></component>
+    <transition name="pm" mode="out-in">
+      <h2 v-if="isShow">Hello Wor</h2>
+      <h2 v-else>你好啊</h2>
     </transition>
   </div>
 </template>
 
 <script>
-import Home from "./pages/Home.vue";
-import About from "./pages/About.vue";
 export default {
-  components: {
-    Home,
-    About,
-  },
   data() {
     return {
       isShow: true,

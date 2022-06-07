@@ -2,21 +2,15 @@
   <div class="test">
     <button @click="isShow = !isShow">显示/隐藏</button>
 
-    <!-- appear 默认是 false -->
-    <transition name="pm" mode="out-in" appear>
-      <component :is="isShow ? 'Home' : 'About'"></component>
+    <!-- 根据那种类型来决定动画 执行结束时间 duration 动画执行的时间 {enter:800,leave:1000} -->
+    <transition name="pm" type="transition" :duration="1000">
+      <h2 v-if="isShow">Hello Word</h2>
     </transition>
   </div>
 </template>
 
 <script>
-import Home from "./pages/Home.vue";
-import About from "./pages/About.vue";
 export default {
-  components: {
-    Home,
-    About,
-  },
   data() {
     return {
       isShow: true,
