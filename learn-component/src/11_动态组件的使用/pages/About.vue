@@ -18,6 +18,20 @@ export default {
       this.counter++
     },
   },
+  /* created(){
+    console.log("about created：组件创建");
+  },
+  unmounted(){
+    console.log("abput unmounted：组件卸载");
+  } */
+
+  // 针对缓存组件
+  activated(){
+    console.log("about activated");
+  },
+  deactivated(){
+    console.log("about deactivated");
+  }
 };
 </script>
 

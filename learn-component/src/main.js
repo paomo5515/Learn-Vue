@@ -15,7 +15,9 @@ import { createApp } from 'vue'
 
 console.log(sum(20, 30)); */
 
-import App from "./13_引用元素和组件/App.vue"
+// import App from "./13_引用元素和组件/App.vue"
+// import App from "./14_组件的声明周期/App.vue"
+import App from "./15_组件的v-model/App.vue"
 
 // 分开打包，通过 import() 导入的模块，后续 webpack 对其进行打包的时候就会进行分包的操作
 // import("./12_异步组件的使用/utils/math").then(({ sum }) => {
