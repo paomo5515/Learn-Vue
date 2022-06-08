@@ -15,33 +15,16 @@ export default {
     const name = ref("tom");
     const age = ref(18);
 
-    const stop = watchEffect((onInvalidate) => {
-      const timer = setTimeout(() => {
-        console.log("网络请求成功~~~");
-      }, 2000);
-
-
-      // 根据 name和 age 两个变量 发送网络请求
-      onInvalidate(() => {
-        // 在这个函数中 清除额外的副作用（取消网络请求）清理工作
-        // request.cancel()
-        
-        // 如果请求中更改了 name/age 就会清理 网络请求
-        clearTimeout(timer)
-        console.log("-----onInvalidate");
-      });
-
+    const stop = watchEffect(() => {
       console.log("name：", name.value, "age：", age.value);
     });
-
     const changeName = () => {
       name.value = "jerry";
     };
-
     const changeAge = () => {
-      age.value++;
-      if (age.value > 25) {
-        stop();
+      age.value++
+      if(age.value > 25){
+        stop()
       }
     };
 
