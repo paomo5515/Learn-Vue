@@ -5,13 +5,16 @@
 </template>
 
 <script>
-import Home from "./03_setup的返回值.vue"
+// import Home from "./04_reactiveAPI使用.vue"
+// import Home from "./05_refAPI使用.vue"
+// import Home from "./06_ref的浅层解包.vue"
+import Home from "./Home.vue"
+
 export default {
   components: {
     Home
   },
-  // setup 函数有哪些参数？
-  // setup 函数有什么样的返回值
+  
 };
 </script>
 
