@@ -10,6 +10,9 @@ import { createApp } from 'vue'
 // import App from "./04_computed和watch/02_watchEffect基本使用.vue"
 // import App from "./04_computed和watch/03_.watchEffect停止侦听.vue"
 // // import App from "./04_computed和watch/04_watchEffect清除副作用.vue"
+// // import App from "./04_computed和watch/05_watchEffect执行时机ref引用.vue"
+// // import App from "./04_computed和watch/06_watch侦听数据源的类型.vue"
+// // import App from "./04_computed和watch/07_watch侦听多个数据源.vue"
 import App from "./04_computed和watch/App.vue"
 
 const app = createApp(App)
