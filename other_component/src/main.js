@@ -6,4 +6,17 @@ import { createApp } from 'vue'
 // import App from './02_jsx的使用/App.vue';
 import App from './03_自定义指令/App.vue';
 
-createApp(App).mount('#app')
+// 导入自定义指令
+import registerDirectives from "./directives";
+const app = createApp(App)
+
+registerDirectives(app)
+// 定义全局指令
+/* app.directive("focus", {
+  mounted(el, bindings, vnode, preVnode) {
+    console.log("focus monted");
+    el.focus();
+  },
+}) */
+
+app.mount('#app')
