@@ -7,15 +7,17 @@
       <li>Home3</li>
       <li>Home4</li>
     </ul>
+
+    <router-view />
+
+    <router-link to="/home/message">消息</router-link>
+    <router-link to="/home/product">商品</router-link>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>
