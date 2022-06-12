@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h2><a href="/home">Home</a></h2>
+    <h2><a href="/about">About</a></h2>
+
+    <div class="content">Default</div>
+  </div>
+
+  <script>
+    const contentEl = document.querySelector(".content")
+
+    const aEls = document.getElementsByTagName("a")
+    // console.log(aEls);
+
+    const changeContent = () => {
+      switch (location.pathname) {
+        case "/home":
+          contentEl.innerHTML = "Home"
+          break;
+        case "/about":
+          contentEl.innerHTML = "About"
+          break;
+
+        default:
+          contentEl.innerHTML = "Default"
+          break;
+      }
+    }
+
+    for (const aEl of aEls) {
+      aEl.addEventListener("click", (event) => {
+        event.preventDefault()
+        // console.log("a click");
+
+        const href = aEl.getAttribute("href")
+        // history.pushState({}, "", href)
+        history.replaceState({}, "", href)
+
+        changeContent()
+      })
+    }
+
+    window.addEventListener("popstate", changeContent)
+
+
+  </script>
+</body>
+
+</html>
