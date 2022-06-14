@@ -1,4 +1,6 @@
 import { createStore } from 'vuex';
+import axios from 'axios';
+import { INCREMENT_N } from './mutation-types';
 
 const store = createStore({
   state() {
@@ -13,7 +15,8 @@ const store = createStore({
         { name: "react", price: 75, count: 3, id: "4" },
       ],
       // 折扣
-      discount: 0.6
+      discount: 0.6,
+      banners: []
     }
   },
   mutations: {
@@ -22,7 +25,16 @@ const store = createStore({
     },
     decrement(state) {
       state.counter--
+    },
+    // 10 -> payload
+    [INCREMENT_N](state, payload) {
+      // state.counter += payload
+      state.counter += payload.age
+    },
+    addBannerData(state, payload) {
+      state.banners = payload
     }
+
   },
   getters: {
     totalPrice(state, getters) {
@@ -53,8 +65,33 @@ const store = createStore({
       return `age：${state.age}`
     },
 
-  }
+  },
+  actions: {
+    incrementAction(context, payload) {
+      // console.log(payload);
+      setTimeout(() => {
+        context.commit("increment")
+      }, 1000)
+    },
+    decrementAction({ commit, dispatch, state, rootState, getters, rootGetters }) {
+      // console.log(context);
+      commit("decrement")
+    },
 
+    getHomeMultidata(context) {
+      return new Promise((resolve, reject) => {
+        axios.get("http://123.207.32.32:8000/home/multidata").then((res) => {
+          // console.log(res.data.data.banner.list);
+          context.commit("addBannerData", res.data.data.banner.list);
+          resolve(res)
+        }).catch(err => {
+          // console.log(err);
+          reject(err)
+        });
+      })
+
+    }
+  }
 })
 
 export default store;
