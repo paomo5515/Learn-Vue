@@ -1,5 +1,5 @@
-import { useGetters } from "./useGetters copy";
-import { useState } from "./useState copy";
+import { useGetters } from "./useGetters";
+import { useState } from "./useState";
 
 export {
   useGetters,
