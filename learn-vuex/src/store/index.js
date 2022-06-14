@@ -45,7 +45,14 @@ const store = createStore({
         }
         return totalPrice * getters.currentDiscount
       }
-    }
+    },
+    nameInfo(state) {
+      return `name：${state.name}`
+    },
+    ageInfo(state) {
+      return `age：${state.age}`
+    },
+
   }
 
 })
