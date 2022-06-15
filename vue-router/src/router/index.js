@@ -60,7 +60,7 @@ const routes = [
 // 创建一个路由对象 router
 const router = createRouter({
   routes,
-  history: createWebHashHistory()
+  history: createWebHistory()
 })
 
 // 动态添加路由

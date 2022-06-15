@@ -4,6 +4,7 @@ module.exports = defineConfig({
   devServer: {
     port: 6060,
     host: "127.0.0.1",
-    open: true
+    open: true,
+    historyApiFallback: true,
   }
 })
