@@ -13,12 +13,16 @@ module.exports = {
     open: true,
     client: {
       logging: 'error',
+      // progress: true, // 浏览器显示 编译进度
     },
   },
 
   stats: {
     // 是 是否添加关于构建模块的信息
-    modules: false,
+    // modules: false,
+    outputPath: true,
+    // 告知 stats 是否添加构建日期与时间信息
+    builtAt: true,
   },
   module: {
     rules: [
