@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>组件的开始</h2>
+    <h2>组件的开始-插槽</h2>
     <slot>
       <i>我是默认的 i 元素</i>
     </slot>
@@ -9,11 +9,7 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
